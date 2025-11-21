@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>olo Investments</title>
+  <meta name="description" content="olo Investments – unabhängiges Research- und Datenprojekt" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fafafa;
+      --text: #1a1a1a;
+      --accent: #2563eb;
+      --gray: #64748b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --text: #e2e8f0;
+        --accent: #60a5fa;
+        --gray: #94a3b8;
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+    }
+    main {
+      max-width: 880px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      font-size: 4.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--accent), #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    p.subtitle {
+      font-size: 1.4rem;
+      color: var(--gray);
+      margin-bottom: 3rem;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+    .card {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(12px);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 1.5rem;
+      padding: 2rem 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      .card { background: rgba(15,23,42,0.6); }
+    }
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--accent);
+    }
+    .card p {
+      color: var(--gray);
+      font-size: 1rem;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 0.35rem 0.9rem;
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+    footer {
+      margin-top: 6rem;
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>olo Investments</h1>
+    <p class="subtitle">Unabhängiges Research- und Datenprojekt</p>
+
+    <div class="card-grid">
+      <!-- Card 1: Pressemitteilungen (public page) -->
+      <a href="https://nadelritter.github.io/olo-investments/" style="text-decoration:none;">
+        <div class="card">
+          <h3>Pressemitteilungen</h3>
+          <p>Empfehlungen und Einschätzungen zu den Daten</p>
+          <span class="badge">Jetzt öffnen →</span>
+        </div>
+      </a>
+
+      <!-- Card 2: Coding-Projekt olo (private) -->
+      <div class="card">
+        <h3>Coding-Projekt olo</h3>
+        <p>Daten sammeln, verarbeiten und Entscheidungen treffen</p>
+        <span class="badge">privat</span>
+      </div>
+
+      <!-- Card 3: Datenbank -->
+      <div class="card">
+        <h3>Datenbank für Coding-Projekt</h3>
+        <p>Rohe und aufbereitete Datenbanken des Projekts</p>
+        <span class="badge">privat</span>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        <a href="https://github.com/nadelritter" target="_blank">GitHub</a>
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
