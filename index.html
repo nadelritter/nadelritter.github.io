@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>olo Investments</title>
+  <meta name="description" content="olo Investments – Quantitative Research & Data-Driven Decisions" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --text: #e8e8e8;
+      --accent: #00c9ff;
+      --gray: #888888;
+      --darkgray: #1c1c1c;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #fafafa;
+        --text: #0f0f0f;
+        --accent: #0099cc;
+        --gray: #666666;
+        --darkgray: #eeeeee;
+      }
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Libre Franklin', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.6s ease;
+    }
+    header {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+    }
+    h1 {
+      font-size: clamp(3.5rem, 10vw, 7rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, var(--accent), #66e0ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--gray);
+      max-width: 680px;
+      margin: 2rem auto;
+    }
+    .tag {
+      font-family: 'Libre Franklin', monospace;
+      font-size: 0.95rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3rem;
+      opacity: 0.9;
+    }
+    main {
+      flex: 1;
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 3rem;
+    }
+    .module {
+      background: var(--darkgray);
+      padding: 2.5rem 2rem;
+      border-radius: 8px;
+      border: 1px solid rgba(100,100,100,0.15);
+      transition: all 0.4s ease;
+    }
+    .module:hover {
+      border-color: var(--accent);
+      transform: translateY(-8px);
+    }
+    .module h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    .module p {
+      font-size: 1.05rem;
+      color: var(--gray);
+    }
+    .access {
+      text-align: center;
+      margin: 6rem 0 4rem;
+    }
+    .btn {
+      display: inline-block;
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.4s ease;
+    }
+    .btn:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--gray);
+      font-size: 0.95rem;
+      border-top: 1px solid rgba(100,100,100,0.2);
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="tag">Quantitative Research Initiative</div>
+    <h1>olo Investments</h1>
+    <p class="subtitle">
+      Systematisches Sammeln, Verarbeiten und Auswerten von Marktdaten<br>
+      mit Fokus auf asymmetrische Risiko-Rendite-Verhältnisse.
+    </p>
+  </header>
+
+  <main>
+    <div class="grid">
+      <div class="module">
+        <h2>Pressemitteilungen & Analyse</h2>
+        <p>Aktuelle Einschätzungen, Dateninterpretationen und öffentliche Research-Updates.</p>
+        <br><br>
+        <a href="https://nadelritter.github.io/olo-investments/" class="btn">Öffentlicher Bereich →</a>
+      </div>
+
+      <div class="module">
+        <h2>Coding-Projekt olo</h2>
+        <p>Automatisierte Datenerfassung, Signalgenerierung und Entscheidungslogik.</p>
+        <br><br>
+        <span style="color:#666; font-style:italic;">Zugang beschränkt</span>
+      </div>
+
+      <div class="module">
+        <h2>Interne Datenbank</h2>
+        <p>Rohe Marktdaten, bereinigte Zeitreihen und proprietäre Derivate.</p>
+        <br><br>
+        <span style="color:#666; font-style:italic;">Privat · Nicht öffentlich</span>
+      </div>
+    </div>
+
+    <div class="access">
+      <p style="margin-bottom: 2rem; color:var(--gray);">
+        Der Großteil der Arbeit erfolgt außerhalb der Öffentlichkeit.<br>
+        Wie bei Renaissance Technologies: Die besten Ideen teilt man nicht.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    olo Investments © 2025 — 
+    <a href="https://github.com/nadelritter" target="_blank">github.com/nadelritter</a>
+  </footer>
+
+</body>
+</html>
