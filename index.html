@@ -4,29 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>olo Investments</title>
-  <meta name="description" content="olo Investments – unabhängiges Research- und Datenprojekt" />
+  <meta name="description" content="olo Investments – unabhängiges Research-Projekt mit Pressemitteilungen, Daten und Entscheidungsfindung" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  
   <style>
     :root {
-      --bg: #fafafa;
-      --text: #1a1a1a;
-      --accent: #2563eb;
+      --bg: #ffffff;
+      --text: #0f172a;
+      --accent: #3b82f6;
+      --accent-dark: #2563eb;
       --gray: #64748b;
+      --light: #f8fafc;
     }
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #0f172a;
-        --text: #e2e8f0;
+        --text: #f1f5f9;
         --accent: #60a5fa;
+        --accent-dark: #93c5fd;
         --gray: #94a3b8;
+        --light: #1e293b;
       }
     }
 
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      margin: 0;
       font-family: 'Inter', system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
@@ -34,115 +39,126 @@
       min-height: 100vh;
       display: grid;
       place-items: center;
-      padding: 2rem;
+      padding: 2rem 1rem;
+      background: linear-gradient(135deg, var(--bg) 0%, var(--light) 100%);
     }
-    main {
-      max-width: 880px;
-      width: 100%;
-      text-align: center;
-    }
+    main { max-width: 960px; width: 100%; text-align: center; }
+    
     h1 {
-      font-size: 4.5rem;
-      font-weight: 700;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 900;
       margin-bottom: 0.5rem;
-      background: linear-gradient(135deg, var(--accent), #a78bfa);
+      background: linear-gradient(90deg, var(--accent), #a78bfa);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    p.subtitle {
-      font-size: 1.4rem;
+    .tagline {
+      font-size: 1.5rem;
       color: var(--gray);
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
+      font-weight: 500;
     }
-    .card-grid {
+
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      margin-top: 4rem;
+      margin: 4rem 0;
     }
     .card {
-      background: rgba(255,255,255,0.6);
-      backdrop-filter: blur(12px);
-      border: 1.5px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.4);
       border-radius: 1.5rem;
-      padding: 2rem 1.5rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+      padding: 2.5rem 2rem;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
     @media (prefers-color-scheme: dark) {
-      .card { background: rgba(15,23,42,0.6); }
+      .card { background: rgba(30,41,59,0.7); }
     }
     .card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      transform: translateY(-16px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.2);
     }
-    .card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
+    .card h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
       color: var(--accent);
     }
     .card p {
       color: var(--gray);
-      font-size: 1rem;
+      margin-bottom: 1.5rem;
     }
-    .badge {
+    .btn {
       display: inline-block;
       background: var(--accent);
       color: white;
-      padding: 0.35rem 0.9rem;
+      padding: 0.8rem 1.8rem;
+      border-radius: 3rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(59,131,246,0.3);
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(59,131,246,0.4);
+      background: var(--accent-dark);
+    }
+    .badge {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #475569;
+      padding: 0.4rem 1rem;
       border-radius: 2rem;
       font-size: 0.8rem;
       font-weight: 600;
-      margin-top: 1rem;
+      margin-top: 0.5rem;
     }
+    @media (prefers-color-scheme: dark) {
+      .badge { background: #334155; color: #cbd5e1; }
+    }
+
     footer {
       margin-top: 6rem;
+      font-size: 1rem;
       color: var(--gray);
-      font-size: 0.95rem;
     }
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    a:hover { text-decoration: underline; }
+    footer a { color: var(--accent); text-decoration: none; }
   </style>
 </head>
 <body>
   <main>
     <h1>olo Investments</h1>
-    <p class="subtitle">Unabhängiges Research- und Datenprojekt</p>
+    <p class="tagline">Unabhängiges Research- und Datenprojekt</p>
 
-    <div class="card-grid">
-      <!-- Card 1: Pressemitteilungen (public page) -->
-      <a href="https://nadelritter.github.io/olo-investments/" style="text-decoration:none;">
-        <div class="card">
-          <h3>Pressemitteilungen</h3>
-          <p>Empfehlungen und Einschätzungen zu den Daten</p>
-          <span class="badge">Jetzt öffnen →</span>
-        </div>
+    <div class="grid">
+      <!-- Öffentlicher Teil -->
+      <a href="https://nadelritter.github.io/olo-investments/" class="card" style="text-decoration:none;">
+        <h2>Pressemitteilungen</h2>
+        <p>Empfehlungen und Einschätzungen zu allen gesammelten Daten</p>
+        <div class="btn">Jetzt öffnen →</div>
       </a>
 
-      <!-- Card 2: Coding-Projekt olo (private) -->
+      <!-- Coding-Projekt -->
       <div class="card">
-        <h3>Coding-Projekt olo</h3>
+        <h2>Coding-Projekt olo</h2>
         <p>Daten sammeln, verarbeiten und Entscheidungen treffen</p>
-        <span class="badge">privat</span>
+        <div class="badge">privat</div>
       </div>
 
-      <!-- Card 3: Datenbank -->
+      <!-- Datenbank -->
       <div class="card">
-        <h3>Datenbank für Coding-Projekt</h3>
+        <h2>Datenbank für Coding-Projekt</h2>
         <p>Rohe und aufbereitete Datenbanken des Projekts</p>
-        <span class="badge">privat</span>
+        <div class="badge">privat</div>
       </div>
     </div>
 
     <footer>
-      <p>
-        <a href="https://github.com/nadelritter" target="_blank">GitHub</a>
-      </p>
+      <a href="https://github.com/nadelritter" target="_blank">github.com/nadelritter</a>
     </footer>
   </main>
 </body>
